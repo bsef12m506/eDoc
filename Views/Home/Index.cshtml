@@ -1,0 +1,26 @@
+﻿
+           @using termProject.Models
+<div class="bg-info text-center"  >
+
+    
+    <hr><hr><hr><h1 class="text-center">A visit to e-Doctor a day keeps diseases away!!!</h1><hr>
+    <h3>Select a disease to continue:</h3><hr><hr><hr>
+    <div class="dropdown text-center">
+        <button class="btn btn-primary dropdown-toggle text-center" type="button" data-toggle="dropdown">
+         <strong>  Diseases</strong>
+            <span class="caret text-center"></span>
+        </button>
+        <ul class="dropdown-menu text-center">
+            @{
+
+               foreach(Disease d in Model){
+                   if (d.name != null) { 
+            <li>@Html.ActionLink(d.name, "DisView", new {id=@d.Id })</li>
+            }
+            }
+            }
+          
+        </ul>
+    </div> 
+    <hr><hr><hr><hr>
+</div>

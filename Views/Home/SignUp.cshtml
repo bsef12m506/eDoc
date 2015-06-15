@@ -1,0 +1,52 @@
+﻿@using termProject.Controllers;
+@using termProject.Models;
+<div class=" container">
+   
+    <form class="form-signin" method="post" action="/Home/SignedUp" enctype="multipart/form-data">
+        <hr class="fade"><hr class="fade"><hr class="fade"> <h2 class="form-signin-heading text-center text-info">Please Sign Up!!!</h2>
+        <hr class="fade">    <hr class="fade"><hr class="fade">
+        <label for="inputName" class="sr-only text-info">Name</label>
+        <div class="text-info"id="checking">Checking...</div><input type="text" id="name" name="name" class="form-control center-block" style="width:340px" placeholder="Name" required autofocus>
+        <input type="button" id="b1" value="Check Availability" />
+        <div class="text-info "id="result"><strong></strong></div>
+        @Scripts.Render("~/bundles/jquery")
+        <script>
+
+            $(document).ready(function () {
+
+                $('#checking').hide();
+
+                $('#b1').click(function () {
+
+                    var userName = $('#name').val();
+
+                    //alert('User Name ='+ userName);
+                    $('#checking').show();
+                    $.getJSON("/Home/CheckUserName?userName=" + userName, function (data) {
+                        $('#checking').hide();
+                        if (data) {
+                            $('#result').text("User already exists in database");
+
+                        }
+                        else {
+                            $('#result').text("User Name is available");
+                        }
+                    });
+
+                });
+
+            });
+        </script>
+        <label for="inputEmail" class="sr-only text-info">Email address</label>
+        <input type="email" id="inputEmail" name="email" class="form-control center-block" style="width:340px" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="pwd" class="form-control center-block" style="width:340px" placeholder="Password" required>
+        <p class="text-info">Upload Image: </p><input type="file" name="image" />
+        <div class="checkbox text-center">
+            <hr class="fade">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block center-block" style="width:340px" type="submit" ><strong>Sign Up</strong></button>
+        <hr class="fade"><hr class="fade"><hr class="fade">
+    </form>
+    <a href="/Home/UploadImg">UploadImg</a>
+</div>

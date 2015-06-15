@@ -1,0 +1,17 @@
+﻿@using termProject.Models;
+<hr class="fade"><hr class="fade"><hr class="fade">
+<div class="container bg-info" >
+    <hr class="fade"><hr class="fade"><hr class="fade"><h1 class="text-center">Search Results</h1><hr>
+    <ul>
+    @{
+        
+               foreach(Disease d in Model){
+                   if (d.name != null) { 
+            <li><Strong>@Html.ActionLink(d.name, "DisView", new {id=@d.Id })</Strong></li>
+            }
+                        }
+       
+    }
+    </ul>
+    <hr class="fade"><hr class="fade"><hr class="fade">
+</div>

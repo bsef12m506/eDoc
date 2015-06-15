@@ -1,0 +1,82 @@
+﻿@model termProject.Models.Disease
+           @using termProject.Models;
+
+@{
+    ViewBag.Title = "DisView";
+}
+
+<div class="container">
+    <div class="row" style="">
+        <div class="col-md-3 bg-warning">
+            <h1><strong>Precautions</strong></h1>
+            @{
+              
+               
+            <p>@Model.precautions</p>
+            }
+            <hr class="fade">
+            <hr class="fade">
+        </div>
+        <div class="col-md-9 bg-info">
+            <h1><strong>General Info.</strong></h1>
+            @{
+
+
+                <p>@Model.basicInfo</p>
+            }
+            <hr class="fade">
+            <hr class="fade">
+            <hr class="fade">
+            <hr class="fade">
+            <hr class="fade">
+            <hr class="fade">
+            <hr class="fade">
+            <hr class="fade">
+        </div>
+        
+     </div>   
+            
+
+                <div class="container bg-success">
+        <h1 class="text-info"><strong>Medical Aid</strong></h1>
+        <table class="table table-bordered table-hover table-striped">
+        <thead>
+        <tr>
+            
+            <th class="text-info">Name of Doctor</th>
+            <th class="text-info">ContactNo</th>
+            <th class="text-info">Location</th>
+            <th class="text-info">Specialization</th>
+            <th class="text-info">Make Appointment</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            eDocEntities ed = new eDocEntities();
+            var doc = ed.Doctors.Where(o => o.Id == @Model.Id);
+            foreach (var obj in doc)
+            {
+                <tr>
+                   
+                    <td>@obj.name</td>
+                    <td>@obj.contactNo</td>
+                    <td>@obj.Location</td>
+                    <td>@obj.specialization</td>
+                    <td> @Html.ActionLink("Confirm Appointment", "AddApp", new { doc=@obj.Id})</td>
+                    
+                </tr>
+
+            }
+          
+        }
+
+
+
+    </tbody>
+</table></div>
+            
+       
+   
+</div>
+

@@ -1,0 +1,194 @@
+﻿@using termProject.Models;
+           @{
+               eDocEntities ed = new eDocEntities();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>eDoctor</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap-lightbox.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery.fancybox.css?v=2.1.5" media="screen" />
+    <link href="~/Content/offcanvas.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/Content/starter-template.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+                        $(function () {
+
+                            var available = [@ed.Diseases.ToList()];
+
+                            $("#search").autocomplete({
+                                source: available
+                            });
+                        });
+    </script>
+    
+</head>
+<body>
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+            
+
+            
+            $('.fancybox').fancybox();
+            
+
+            
+        });
+        
+    </script>
+    <p>
+    <a class="fancybox" href="doctorsnews15.jpg" data-fancybox-group="gallery" title="">
+        <img src="~/Images/doctorsnews15.jpg" />
+    </a>
+    
+    <a class="fancybox" href="health-buddy.jpg" data-fancybox-group="gallery" title=""<img src="~/Images/health-buddy.jpg" /></a>
+    
+    <a class="fancybox" href="health-congress.jpg" data-fancybox-group="gallery" title="">
+        <img src="~/Images/health-congress.jpg" />
+    </a>
+    
+    <a class="fancybox" href="medico-fit-full.jpg" data-fancybox-group="gallery" title="">
+        <img src="~/Images/medico-fit-full.jpg" />
+    </a></p>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">eDoctor</a>
+                
+            </div>
+            <div id="navbar" class="collapse navbar-collapse ui-widget">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Home/About">About</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User's Menu<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/Home/SignUp">Sign Up</a></li>
+                            <li><a href="/Home/SignIn">Sign In</a></li>
+                            @{
+                                if (Session["id"] != null) { 
+                              <li><a href="~/Home/ViewProfile">ViewProfile</a></li>
+                                <li><a href="~/Home/LogOut">LogOut</a></li>
+                            }
+                                }
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/Home/Suggestions">Suggestions</a></li>
+                            <li><a href="/Home/Add">Add/Update a disease</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+
+                        <form class="navbar-form navbar-right ui-widget" method="post" action="~/Home/Search">
+                            <input type="text" class="form-control" id="search" name="search" placeholder="SearchByDiseaseName"/>
+                        </form></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                
+                <div class="item active">
+
+                   
+                    <img src="~/Images/doctorsnews15.jpg"  alt="banner" />
+                </div>
+                <div class="item">
+
+                   
+                <img src="~/Images/greysanatomy_y10_gal_001_19695lt-19695m0.jpg" alt="health" />
+                </div>
+                <div class="item">
+
+                  
+                    <img src="~/Images/health-buddy.jpg" alt="healthy" />
+                </div>
+                <div class="item">
+
+                    
+                    <img src="~/Images/health-congress.jpg" alt="consult" />
+                </div>
+                <div class="item">
+
+
+                   
+                <img src="~/Images/medico-fit-full.jpg"  alt="consult" />
+                </div>
+                <div class="item">
+
+
+                    
+                    <img src="~/Images/TOPENG3950.png" alt="consult" />
+                </div>
+            </div>
+        </div>
+    @RenderBody()
+        <a data-toggle="lightbox" href="#demoLightbox" class="text-danger">Open Lightbox</a>
+        <div id="demoLightbox" class="lightbox hide fade bg-danger "  tabindex="-1" role="dialog" aria-hidden="true">
+            <div class='lightbox-content'>
+               
+                <img src="~/Images/doctorsnews15.jpg" />
+                <div class="lightbox-caption"><p>eDoctor</p></div>
+            </div>
+        </div>
+             <hr>   <footer class="text-info">
+                    <p >&copy; eDoctor2015</p>
+                </footer>
+        
+            </div><!-- /.container -->
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
+    <script src="~/Scripts/bootstrap-lightbox.js"></script>
+    <script src="~/Scripts/offcanvas.js"></script>
+    <script type="text/javascript" src="jquery.mousewheel.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="~/Scripts/jquery.fancybox.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

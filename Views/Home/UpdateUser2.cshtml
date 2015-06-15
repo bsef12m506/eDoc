@@ -1,0 +1,24 @@
+﻿@model termProject.Models.WebUser
+
+@{
+    ViewBag.Title = "UpdateUser";
+}
+
+<h2 class="text-info">Update Info</h2>
+<div class="container bg-info">
+
+    @using (Html.BeginForm("Updated", "Home", FormMethod.Post))
+    {
+        @Html.HiddenFor(u => u.Id)
+        @Html.LabelFor(u => u.name)
+        @Html.EditorFor(u => u.name)
+
+        @Html.LabelFor(u => u.email)
+        @Html.EditorFor(u => u.email)
+
+        @Html.LabelFor(u => u.pwd)
+        @Html.EditorFor(u => u.pwd)
+        <input type="submit" value="Save" />
+    }
+
+</div>
