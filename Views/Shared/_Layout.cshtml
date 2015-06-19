@@ -18,13 +18,18 @@
     <link href="~/Content/bootstrap-lightbox.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/Content/jquery.fancybox.css?v=2.1.5" media="screen" />
     <link href="~/Content/offcanvas.css" rel="stylesheet">
+    @RenderSection("scripts", required: false)
     <!-- Custom styles for this template -->
     <link href="~/Content/starter-template.css" rel="stylesheet">
+    <script src="~/Content/source/jquery.fancybox.pack.js"></script>
+    <script src="~/Content/source/jquery.fancybox.js"></script>
+    <script src="~/Content/lib/jquery.mousewheel.pack.js"></script>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="~/Content/lib/jquery-1.10.2.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -58,19 +63,11 @@
         
     </script>
     <p>
-    <a class="fancybox" href="doctorsnews15.jpg" data-fancybox-group="gallery" title="">
-        <img src="~/Images/doctorsnews15.jpg" />
-    </a>
+        <a class="fancybox" href="~/Images/doctorsnews15.jpg" data-fancybox-group="gallery" title="">
+            <img src="~/Images/doctorsnews15.jpg" />
+        </a>
     
-    <a class="fancybox" href="health-buddy.jpg" data-fancybox-group="gallery" title=""<img src="~/Images/health-buddy.jpg" /></a>
-    
-    <a class="fancybox" href="health-congress.jpg" data-fancybox-group="gallery" title="">
-        <img src="~/Images/health-congress.jpg" />
-    </a>
-    
-    <a class="fancybox" href="medico-fit-full.jpg" data-fancybox-group="gallery" title="">
-        <img src="~/Images/medico-fit-full.jpg" />
-    </a></p>
+       </p>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -189,6 +186,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     
     <script type="text/javascript" src="~/Scripts/jquery.fancybox.js"></script>
-    @RenderSection("scripts", required: false)
+  
 </body>
 </html>
