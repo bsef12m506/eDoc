@@ -36,16 +36,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script>
-                        $(function () {
-
-                            var available = [@ed.Diseases.ToList()];
-
-                            $("#search").autocomplete({
-                                source: available
-                            });
-                        });
-    </script>
+  
     
 </head>
 <body>
@@ -63,7 +54,7 @@
         
     </script>
     <p>
-        <a class="fancybox" href="~/Images/doctorsnews15.jpg" data-fancybox-group="gallery" title="">
+        <a class="fancybox" href="~/Images/doctorsnews15.jpg"  title="">
             <img src="~/Images/doctorsnews15.jpg" />
         </a>
     
@@ -160,14 +151,7 @@
             </div>
         </div>
     @RenderBody()
-        <a data-toggle="lightbox" href="#demoLightbox" class="text-danger">Open Lightbox</a>
-        <div id="demoLightbox" class="lightbox hide fade bg-danger "  tabindex="-1" role="dialog" aria-hidden="true">
-            <div class='lightbox-content'>
-               
-                <img src="~/Images/doctorsnews15.jpg" />
-                <div class="lightbox-caption"><p>eDoctor</p></div>
-            </div>
-        </div>
+       
              <hr>   <footer class="text-info">
                     <p >&copy; eDoctor2015</p>
                 </footer>
